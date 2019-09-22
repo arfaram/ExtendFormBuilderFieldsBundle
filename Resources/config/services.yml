@@ -1,0 +1,19 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    EzSystems\ExtendFormBuilderFieldsBundle\FormBuilder\Field\Mapper\CountryFieldMapper:
+        arguments:
+            $fieldIdentifier: 'sf_country'
+            $formType: 'EzSystems\ExtendFormBuilderFieldsBundle\FormBuilder\Field\Type\CountryFormFieldType'
+        tags:
+            - { name: 'ezplatform.form_builder.field_mapper' }
+
+    EzSystems\ExtendFormBuilderFieldsBundle\FormBuilder\Field\Mapper\DropdownFieldMapper:
+        arguments:
+            $fieldIdentifier: 'dropdown'
+            $formType: 'EzSystems\ExtendFormBuilderFieldsBundle\FormBuilder\Field\Type\DropdownFieldType'
+        decorates: 'EzSystems\EzPlatformFormBuilder\FieldType\Field\Mapper\DropdownFieldMapper'
+        decoration_priority: 5

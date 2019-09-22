@@ -1,0 +1,17 @@
+fields:
+    sf_country:
+        name: 'Country'
+        category: 'Symfony'
+        thumbnail: '/bundles/ezplatformadminui/img/ez-icons.svg#input-line'
+        attributes:
+            label:
+                name: 'Display label'
+                type: 'string'
+                validators:
+                    not_blank:
+                        message: 'You must provide label of the field'
+            help:
+                name: 'Help text'
+                type: 'string'
+        validators:
+            required: ~
